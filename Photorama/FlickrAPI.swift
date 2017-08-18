@@ -8,6 +8,9 @@
 
 import Foundation
 
+enum Method: String {
+    case interestingPhotos = "flickr.interestingness.getList"
+}
 struct FlickrAPI {
-    
+    static let baseURLString = "https://api.flickr.com/services/rest"
 }
