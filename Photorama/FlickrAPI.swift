@@ -15,6 +15,10 @@ struct FlickrAPI {
     
     private static let baseURLString = "https://api.flickr.com/services/rest"
     
+    static var interestingPhotosURL: URL {
+        return flickrURL(method: .interestingPhotos, parameters: ["extras":"url_h,date_taken"])
+    }
+        
     private static func flickrURL(method: Method, parameters: [String:String]?) -> URL {
         return URL(string: "")!
     }
