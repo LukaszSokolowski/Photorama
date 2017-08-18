@@ -6,4 +6,8 @@
 //  Copyright © 2017 Łukasz Sokołowski. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PhotosViewController: UIViewController {
+    @IBOutlet var imageView: UIImageView!
+}
