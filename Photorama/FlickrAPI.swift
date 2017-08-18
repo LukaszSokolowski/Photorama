@@ -20,6 +20,16 @@ struct FlickrAPI {
     }
         
     private static func flickrURL(method: Method, parameters: [String:String]?) -> URL {
-        return URL(string: "")!
+        var components = URLComponents(string: baseURLString)!
+        var queryItems = [URLQueryItem]()
+        
+        if let additionalParams = parameters {
+            for (key,value) in additionalParams {
+                let item = URLQueryItem(name: key, value: value)
+                queryItems.append(item)
+            }
+        }
+        components.queryItems = queryItems
+        return components.url!
     }
 }
