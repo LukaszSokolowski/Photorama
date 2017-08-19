@@ -14,6 +14,7 @@ enum Method: String {
 struct FlickrAPI {
     
     private static let baseURLString = "https://api.flickr.com/services/rest"
+    private static let apiKey = "a6d819499131071f158fd740860a5a88"
     
     static var interestingPhotosURL: URL {
         return flickrURL(method: .interestingPhotos, parameters: ["extras":"url_h,date_taken"])
