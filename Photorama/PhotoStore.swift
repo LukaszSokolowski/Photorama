@@ -10,4 +10,9 @@ import Foundation
 
 class PhotoStore {
     
+    private let session: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config)
+    }()
+    
 }
