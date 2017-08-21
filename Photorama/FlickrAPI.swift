@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum flickrError: Error {
+    case invalidJSONData
+}
+
 enum Method: String {
     case interestingPhotos = "flickr.interestingness.getList"
 }
@@ -45,4 +49,15 @@ struct FlickrAPI {
         components.queryItems = queryItems
         return components.url!
     }
+    
+    static func photos(fromJSON data: Data) -> PhotosResult {
+        do {
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            var finalPhotos = [Photo]()
+            return .success(finalPhotos)
+        } catch let error {
+            return .failure(error)
+        }
+    }
 }
+
