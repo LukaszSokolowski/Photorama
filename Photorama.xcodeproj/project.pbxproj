@@ -16,6 +16,7 @@
 		219E6EC41F463C9A00A9CF09 /* PhotoramaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219E6EC31F463C9A00A9CF09 /* PhotoramaUITests.swift */; };
 		21A661E71F47652200838933 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A661E61F47652200838933 /* PhotosViewController.swift */; };
 		21A661EB1F476CA800838933 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A661EA1F476CA800838933 /* FlickrAPI.swift */; };
+		21F207B81F4B5126006E4877 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F207B71F4B5126006E4877 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		219E6EC51F463C9A00A9CF09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21A661E61F47652200838933 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		21A661EA1F476CA800838933 /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
+		21F207B71F4B5126006E4877 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				219E6EAA1F463C9A00A9CF09 /* Assets.xcassets */,
 				219E6EAC1F463C9A00A9CF09 /* LaunchScreen.storyboard */,
 				219E6EAF1F463C9A00A9CF09 /* Info.plist */,
+				21F207B71F4B5126006E4877 /* Photo.swift */,
 			);
 			path = Photorama;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				21A661E71F47652200838933 /* PhotosViewController.swift in Sources */,
 				212832941F4897CF00FDC57A /* PhotoStore.swift in Sources */,
 				219E6EA41F463C9A00A9CF09 /* AppDelegate.swift in Sources */,
+				21F207B81F4B5126006E4877 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
