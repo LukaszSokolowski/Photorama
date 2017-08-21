@@ -23,17 +23,21 @@ class PhotoStore {
             (data,response,error) -> Void in
             
             if let jsonData = data {
-                if let jsonString = String(data: jsonData, encoding: .utf8) {
-                    print(jsonString)
+            do {
+                
+                let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                    print(jsonObject)
+                
+            } catch let error {
+                    print("Error creating JSON object: \(error)")
                 }
             } else if let requestError = error {
                     print("Error fetching interesting photos: \(requestError)")
-                }
-            
-             else {
-               print("Unexpected error with the request")
-             }
+            }
+               else {
+                  print("Unexpected error with the request")
+            }
        }
-            task.resume()
+        task.resume()
     }
 }
