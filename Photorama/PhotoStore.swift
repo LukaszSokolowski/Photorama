@@ -76,7 +76,6 @@ class PhotoStore {
         }
         return .success(image)
     }
-    
 }
 
 
