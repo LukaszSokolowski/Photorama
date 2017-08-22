@@ -47,4 +47,18 @@ class PhotoStore {
         }
         return FlickrAPI.photos(fromJSON: jsonData)
     }
+    
+    func fetchImage(for photo: Photo, completion: @escaping (ImageResult) -> Void) {
+        let photoURL = photo.remoteURL
+        let request = URLRequest(url: photoURL)
+        
+        let task = session.dataTask(with: request) {
+            (data, response, error) -> Void in
+        }
+            task.resume()
+    }
+    
 }
+
+
+
