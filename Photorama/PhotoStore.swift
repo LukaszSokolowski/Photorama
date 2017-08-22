@@ -6,7 +6,15 @@
 //  Copyright © 2017 Łukasz Sokołowski. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum ImageResult {
+    case success(UIImage)
+    case failure(Error)
+}
+enum PhotoError: Error {
+    case imageCreationError
+}
 
 enum PhotosResult {
     case success([Photo])
