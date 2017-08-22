@@ -69,6 +69,19 @@ struct FlickrAPI {
             return .failure(FlickrError.invalidJSONData)
             }
             var finalPhotos = [Photo]()
+            
+            for photoJSON in photosArray {
+                if let photo = photo(fromJSON: photoJSON) {
+                    finalPhotos.append(photo)
+                }
+            }
+            
+            if finalPhotos.isEmpty && !photosArray.isEmpty {
+                // We weren't able to parse any of the photos
+                // Maybe the JSON format for photos has changed
+                return .failure(FlickrError.invalidJSONData)
+            }
+            
             return .success(finalPhotos)
         } catch let error {
             return .failure(error)
