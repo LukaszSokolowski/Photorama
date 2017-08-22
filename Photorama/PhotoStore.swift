@@ -45,4 +45,11 @@ class PhotoStore {
        }
         task.resume()
     }
+    
+    private func processPhotosRequest(data: Data?, error: Error?) -> PhotosResult {
+        guard let jsonData = data else {
+            return PhotosResult.failure(error!)
+        }
+        return FlickrAPI.photos(fromJSON: jsonData)
+    }
 }
