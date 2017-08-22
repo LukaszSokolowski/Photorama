@@ -58,6 +58,22 @@ class PhotoStore {
             task.resume()
     }
     
+    private func processImageRequest(data: Data?, error: Error?) -> ImageResult {
+        guard
+            let imageData = data,
+            let image = UIImage(data: imageData)
+    
+            else {
+                // Couldn't create an image
+                if data == nil {
+                    return .failure(error!)
+                } else {
+                    return .failure(PhotoError.imageCreationError)
+                }
+        }
+        return .success(image)
+    }
+    
 }
 
 
