@@ -18,49 +18,21 @@ class PhotosViewController: UIViewController {
         
         store.fetchPhotos(photosURL: FlickrAPI.recentPhotosURL ) {
             (photosResult) -> Void in
-            
-            switch photosResult {
-            case let .success(photos):
-                print("Successfully found \(photos.count) photos.")
-                if let firstPhoto = photos.first {
-                    self.updateImageView(for: firstPhoto)
-                }
-            case let .failure(error):
-                print("Error fetching interesting photos: \(error)")
-            }
+            self.resultOffetchingPhotos(result: photosResult)
         }
     }
     
     @IBAction func showRecentPhotos(_ sender: UIButton) {
-        store.fetchPhotos(photosURL: FlickrAPI.recentPhotosURL, completion: {
+        store.fetchPhotos(photosURL: FlickrAPI.recentPhotosURL) {
             (photosResult) -> Void in
-            
-            switch photosResult {
-            case let .success(photos):
-                print("Successfully found \(photos.count) photos.")
-                if let firstPhoto = photos.first {
-                    self.updateImageView(for: firstPhoto)
-                }
-            case let .failure(error):
-                print("Error fetching interesting photos: \(error)")
-            }
-        })
+          self.resultOffetchingPhotos(result: photosResult)
+        }
     }
     
     @IBAction func showInterestingPhotos(_ sender: UIButton) {
-        
         store.fetchPhotos(photosURL: FlickrAPI.interestingPhotosURL ) {
             (photosResult) -> Void in
-            
-            switch photosResult {
-            case let .success(photos):
-                print("Successfully found \(photos.count) photos.")
-                if let firstPhoto = photos.first {
-                    self.updateImageView(for: firstPhoto)
-                }
-            case let .failure(error):
-                print("Error fetching interesting photos: \(error)")
-            }
+                self.resultOffetchingPhotos(result: photosResult)
         }
 
     }
@@ -76,10 +48,8 @@ class PhotosViewController: UIViewController {
         case let .failure(error):
             print("Error fetching interesting photos: \(error)")
         }
-
-    
     }
-    
+
     func updateImageView(for photo: Photo) {
         store.fetchImage(for: photo) {
             (imageResult) -> Void in
