@@ -17,6 +17,7 @@
 		21A661E71F47652200838933 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A661E61F47652200838933 /* PhotosViewController.swift */; };
 		21A661EB1F476CA800838933 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A661EA1F476CA800838933 /* FlickrAPI.swift */; };
 		21F207B81F4B5126006E4877 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F207B71F4B5126006E4877 /* Photo.swift */; };
+		21F871981F5C941B00BEF0DF /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F871971F5C941B00BEF0DF /* PhotoDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		21A661E61F47652200838933 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		21A661EA1F476CA800838933 /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		21F207B71F4B5126006E4877 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		21F871971F5C941B00BEF0DF /* PhotoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				21A661EA1F476CA800838933 /* FlickrAPI.swift */,
 				212832931F4897CF00FDC57A /* PhotoStore.swift */,
 				21F207B71F4B5126006E4877 /* Photo.swift */,
+				21F871971F5C941B00BEF0DF /* PhotoDataSource.swift */,
 				219E6EA71F463C9A00A9CF09 /* Main.storyboard */,
 				219E6EAA1F463C9A00A9CF09 /* Assets.xcassets */,
 				219E6EAC1F463C9A00A9CF09 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				21A661EB1F476CA800838933 /* FlickrAPI.swift in Sources */,
 				21A661E71F47652200838933 /* PhotosViewController.swift in Sources */,
 				212832941F4897CF00FDC57A /* PhotoStore.swift in Sources */,
+				21F871981F5C941B00BEF0DF /* PhotoDataSource.swift in Sources */,
 				219E6EA41F463C9A00A9CF09 /* AppDelegate.swift in Sources */,
 				21F207B81F4B5126006E4877 /* Photo.swift in Sources */,
 			);

@@ -21,21 +21,7 @@ class PhotosViewController: UIViewController {
                 self.takeAnActionAccordingToThe(result: photosResult)        }
     }
     
-    @IBAction func showRecentPhotos(_ sender: UIButton) {
-        store.fetchPhotos(photosURL: FlickrAPI.recentPhotosURL) {
-            (photosResult) -> Void in
-                self.takeAnActionAccordingToThe(result: photosResult)        }
-    }
-    
-    @IBAction func showInterestingPhotos(_ sender: UIButton) {
-        store.fetchPhotos(photosURL: FlickrAPI.interestingPhotosURL ) {
-            (photosResult) -> Void in
-                self.takeAnActionAccordingToThe(result: photosResult)
-        }
-
-    }
-    
-    func takeAnActionAccordingToThe(result: PhotosResult) {
+   private func takeAnActionAccordingToThe(result: PhotosResult) {
         switch result {
         case let .success(photos):
             print("Successfully found \(photos.count) photos.")
@@ -47,7 +33,7 @@ class PhotosViewController: UIViewController {
         }
     }
 
-    func updateImageView(for photo: Photo) {
+   private func updateImageView(for photo: Photo) {
         store.fetchImage(for: photo) {
             (imageResult) -> Void in
             switch imageResult {

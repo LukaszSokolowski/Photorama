@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,57 +21,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrl-oN-hBS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="544"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hn3-xD-mep">
-                                <rect key="frame" x="16" y="629" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Recent">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-ZT-sJb">
-                                <rect key="frame" x="287" y="629" width="72" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Interesting">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showInterestingPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PxJ-LV-YTl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-3V-vi4">
-                                <rect key="frame" x="16" y="629" width="48" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Recent">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="showRecentPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpj-HC-7It"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aP9-Ne-FJa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W92-sl-F4e">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionCellView" id="Hdm-vA-BZ4">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="G3q-ZT-sJb" firstAttribute="top" secondItem="xrl-oN-hBS" secondAttribute="bottom" constant="21" id="43d-FR-NUo"/>
-                            <constraint firstAttribute="trailing" secondItem="xrl-oN-hBS" secondAttribute="trailing" id="8mS-ag-WP1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xrl-oN-hBS" secondAttribute="bottom" constant="59" id="Alc-kX-DL4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="G3q-ZT-sJb" secondAttribute="trailing" id="FVp-ba-ga8"/>
-                            <constraint firstItem="xrl-oN-hBS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ne0-w4-kwX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Ul-3V-vi4" secondAttribute="bottom" constant="8" id="VT0-kd-ogF"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="5Ul-3V-vi4" secondAttribute="leading" id="WfU-zX-vyV"/>
-                            <constraint firstItem="xrl-oN-hBS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wv1-SH-ac8"/>
-                            <constraint firstItem="5Ul-3V-vi4" firstAttribute="top" secondItem="xrl-oN-hBS" secondAttribute="bottom" constant="21" id="dhp-QK-uLD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="G3q-ZT-sJb" secondAttribute="trailing" id="if1-Sv-yBa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G3q-ZT-sJb" secondAttribute="bottom" constant="8" id="tya-DX-hIP"/>
+                            <constraint firstAttribute="trailing" secondItem="aP9-Ne-FJa" secondAttribute="trailing" id="9x6-kH-1fF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aP9-Ne-FJa" secondAttribute="bottom" id="IcS-by-led"/>
+                            <constraint firstItem="aP9-Ne-FJa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UJs-4q-PZj"/>
+                            <constraint firstItem="aP9-Ne-FJa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jeA-sm-Yn4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Photorama" id="scz-rf-Huy"/>
-                    <connections>
-                        <outlet property="imageView" destination="xrl-oN-hBS" id="YVM-59-Q9M"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
