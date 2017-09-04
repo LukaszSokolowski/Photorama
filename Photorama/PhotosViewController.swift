@@ -18,20 +18,21 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.dataSource = photoDataSource
+        
         store.fetchPhotos(photosURL: FlickrAPI.recentPhotosURL ) {
             (photosResult) -> Void in
-                self.takeAnActionAccordingToThe(result: photosResult)        }
-    }
-    
-   private func takeAnActionAccordingToThe(result: PhotosResult) {
-        switch result {
-        case let .success(photos):
-            print("Successfully found \(photos.count) photos.")
-            if let firstPhoto = photos.first {
-                self.updateImageView(for: firstPhoto)
+            
+            switch photosResult {
+            case let .success(photos):
+                print("Successfully found \(photos.count) photos.")
+                self.photoDataSource.photos = photos
+            case let .failure(error):
+                print("Error fetching interesting photos: \(error)")
+                self.photoDataSource.photos.removeAll()
             }
-        case let .failure(error):
-            print("Error fetching interesting photos: \(error)")
-        }
-    }   
+            self.collectionView.reloadSections(IndexSet(integer: 0))
+         }
+    }
 }
+
