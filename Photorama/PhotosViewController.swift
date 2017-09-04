@@ -10,8 +10,10 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var collectionView: UICollectionView!
+    
     var store: PhotoStore!
+    let photoDataSource = PhotoDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +33,5 @@ class PhotosViewController: UIViewController {
         case let .failure(error):
             print("Error fetching interesting photos: \(error)")
         }
-    }
-
-   private func updateImageView(for photo: Photo) {
-        store.fetchImage(for: photo) {
-            (imageResult) -> Void in
-            switch imageResult {
-            case let .success(image):
-                self.imageView.image = image
-            case let .failure(error):
-                print("Error downloading image: \(error)")
-            }
-        }
-    }
+    }   
 }
