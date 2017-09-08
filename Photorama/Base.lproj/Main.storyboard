@@ -55,6 +55,10 @@
                                             <constraint firstItem="2Nq-sH-VjS" firstAttribute="centerX" secondItem="Hdm-vA-BZ4" secondAttribute="centerX" id="j4t-Em-seS"/>
                                             <constraint firstAttribute="trailing" secondItem="fOt-ME-wEG" secondAttribute="trailing" id="lSH-dh-J0i"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="fOt-ME-wEG" id="XCy-et-iqx"/>
+                                            <outlet property="spinner" destination="2Nq-sH-VjS" id="rnV-qH-J2i"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
