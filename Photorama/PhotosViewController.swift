@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController {
+class PhotosViewController: UIViewController,UICollectionViewDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
     
