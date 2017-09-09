@@ -19,6 +19,7 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.dataSource = photoDataSource
+        collectionView.delegate = self
         
         store.fetchPhotos(photosURL: FlickrAPI.recentPhotosURL ) {
             (photosResult) -> Void in
