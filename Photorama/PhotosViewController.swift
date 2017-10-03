@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController,UICollectionViewDelegate {
+class PhotosViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -36,6 +36,12 @@ class PhotosViewController: UIViewController,UICollectionViewDelegate {
          }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let minSpacing: CGFloat = 5.0
+        return CGSize(width: collectionView.frame.size.width/4 - minSpacing, height: 50)
+        
+    }
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         let photo = photoDataSource.photos[indexPath.row]
